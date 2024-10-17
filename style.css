@@ -1,0 +1,188 @@
+/*-------------------------Font Styles Importing--------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/*-------------------------Common CSS--------------------------*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/*-------------------------Body Section--------------------------*/
+body{
+  min-height:100vh;
+  background: url('img/bg.webp') no-repeat;
+  background-size: cover;
+  backdrop-filter: blur(3px);
+  background-position: center;
+}
+
+/*-------------------------Header Section--------------------------*/
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.3rem 5%;
+  background: rgba(0, 0, 0, .3);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo{
+  font-size: 2rem;
+  color: azure;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.navbar a{
+  font-size: 1.15rem;
+  color: azure;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 2.5rem;
+}
+.navbar a:hover{
+  font-size: 1.25rem;
+  color: rgba(133, 133, 133, 0.7);
+}
+
+/*-------------------------Menu Icon on the header--------------------------*/
+.icons{
+  font-size: 2.8rem;
+  color: azure;
+  cursor: pointer;
+  display: none;
+}
+.icons:hover{
+  color: rgba(0, 0, 0, 0.5);
+}
+
+
+
+#check{
+  display: none;
+}
+
+
+/*-------------------------Search Icon on the header--------------------------*/
+.input-box {
+  position: relative;
+  height: 56px;
+  max-width: 400px;
+  width: 100%;
+  background: rgba(255, 251, 251,0.3);
+  margin: 0 20px;
+  border-radius: 50px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.input-box i,
+.input-box .button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.input-box i {
+  left: 20px;
+  font-size: 30px;
+  color: #707070;
+}
+.input-box input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 18px;
+  font-weight: 400;
+  border: none;
+  padding: 0 155px 0 65px;
+  background-color: transparent;
+}
+.input-box .button {
+  right: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 50px;
+  background-color: rgba(124, 124, 124, 0.5);
+  cursor: pointer;
+}
+.input-box .button:hover{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.input-box .button:active {
+  transform: translateY(-50%) scale(0.98);
+}
+/* Responsive */
+@media screen and (max-width: 500px) {
+  .input-box {
+    height: 45px;
+    width: 250px;
+    margin: 0 8px;
+  }
+  .input-box i {
+    left: 12px;
+    font-size: 20px;
+  }
+  .input-box input {
+    padding: 0 112px 0 50px;
+    font-size: 13px;
+  }
+  .input-box .button {
+    right: 12px;
+    font-size: 12px;
+    padding: 8px 18px;
+  }
+}
+/*-------------------------Responsive Header--------------------------*/
+
+@media (max-width:992px){
+  .icons{
+    display: inline-flex;
+  }
+
+  .icons #close-icon{
+    display: none;
+  }
+
+  #check:checked~.icons #menu-icon{
+    display: none;
+  }
+  #check:checked~.icons #close-icon{
+    display: block;
+  }
+
+  .navbar{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0rem;
+    background: rgba(0, 0, 0, .4);
+    backdrop-filter: blur(5px);
+    transition: 0.3s ease;
+    overflow: hidden;
+    
+  }
+
+  #check:checked~.navbar{
+    height: 14rem;
+  }
+
+  .navbar a{
+    display: block;
+    font-size: 1.1rem;
+    margin: 1.5rem;
+    text-align: center;
+    
+  }
+
+}
+
